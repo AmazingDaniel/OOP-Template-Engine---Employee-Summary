@@ -66,7 +66,7 @@ function confirmEmp() {
         } else if (info.choiceEmployee === "Intern"){
             intern();
         } else {
-        (output());
+        output();
         }
     });
 };
