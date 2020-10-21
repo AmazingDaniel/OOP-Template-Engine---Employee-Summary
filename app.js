@@ -65,8 +65,9 @@ function confirmEmp() {
             engineer();
         } else if (info.choiceEmployee === "Intern"){
             intern();
-        } else 
+        } else {
         (output());
+        }
     });
 };
 
@@ -79,7 +80,7 @@ function engineer() {
         },
         {
             type: "input",
-            name:"engrId",
+            name:"engId",
             message: "What is the engineer's ID#?"
         },
         {
@@ -92,13 +93,12 @@ function engineer() {
             name: "engGitHub",
             message: "Engineer's GitHub?"
         }
-    ])
-     .then(function(info){
+    ]).then(function(info){
         const newEng = new Engineer
-        (info.engineerName, 
-            info.engineerId, 
-            info.engineerEmail, 
-            info.engineerGithub);
+        (info.engName, 
+            info.engId, 
+            info.engEmail, 
+            info.engGitHub);
         team.push(newEng);
         confirmEmp();
     });
@@ -128,10 +128,10 @@ function intern() {
         }
     ]).then(function(info){
         const newInt = new Intern
-        (info.internName, 
-            info.internId, 
-            info.internEmail, 
-            info.internSchool);
+        (info.intName, 
+            info.intId, 
+            info.intEmail, 
+            info.intSchool);
         team.push(newInt);
         confirmEmp();
     });
